@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'teacher',
     'school',
     'head_master',
+    'address',
 )
 
 MIDDLEWARE_CLASSES = (

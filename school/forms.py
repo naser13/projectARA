@@ -5,3 +5,4 @@ from .models import School
 class NewSchool(ModelForm):
     class Meta:
         model = School
+        fields = ['name']

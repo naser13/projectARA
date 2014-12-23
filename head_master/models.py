@@ -7,7 +7,7 @@ class HeadMaster(models.Model):
     last_name = models.CharField(max_length=80)
     national_ID = models.CharField(max_length=10, unique=True)
     father_name = models.CharField(max_length=80)
-    school = models.OneToOneField(School)
+    school = models.OneToOneField(School, null=True)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name

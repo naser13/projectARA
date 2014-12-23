@@ -5,10 +5,10 @@
     <title></title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="{% if from %}?next={{ from }}{% endif %}" method="post">
         {% csrf_token %}
-        {{ form }}
-        <a href="{% url 'new_school' %}?from={% url 'new_headmaster' %}">new school</a>
+        {{ form1 }}
+        {{ form2 }}
         <button type="submit">submit</button>
     </form>
 </body>
