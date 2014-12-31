@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
+<body dir="rtl">
     <form action="" method="post">
         {% csrf_token %}
-        {{ form }}
-        <a href="{% url 'new_school' %}?from={% url 'new_headmaster' %}">new school</a>
+        {{ form1 }}
+        <p>school:</p>
+        {{ form2 }}
+        <p>address:</p>
+        {{ form3 }}
         <button type="submit">submit</button>
     </form>
 </body>

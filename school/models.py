@@ -3,7 +3,7 @@ from address.models import Address
 
 
 class School(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField('نام مدرسه', max_length=200)
     address = models.OneToOneField(Address)
 
     def __str__(self):
