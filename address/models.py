@@ -8,4 +8,4 @@ class Address(models.Model):
     more = models.TextField('آدرس دقیق', blank=True)
 
     def __str__(self):
-        return self.city + ' ' + self.street
+        return self.city
