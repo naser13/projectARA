@@ -2,17 +2,18 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>PROJECT ARA</title>
+    <title>آرا</title>
 </head>
-<body>
+<body dir="rtl">
     {% if user.is_authenticated %}
-        <p> hello {{ user.username }}</p>
-        <a href="{% url 'logout_page' %}">Logout</a><br>
+        <p> سلام
+            {{ user.username }}</p>
+        <a href="{% url 'logout_page' %}">خروج</a><br>
     {% else %}
-        <a href="{% url 'login_page' %}">Login</a>
-        <p>Have no account? Sign Up Free</p>
-        <a href="{% url 'new_teacher' %}">new teacher</a><br>
-        <a href="{% url 'new_headmaster' %}">new headmaster</a><br>
+        <a href="{% url 'login_page' %}">وارد شوید</a>
+        <p>یا ثبت نام کنید:</p>
+        <a href="{% url 'new_teacher' %}">ثبت نام معلم</a><br>
+        <a href="{% url 'new_headmaster' %}">ثبت نام مدیر</a><br>
     {% endif %}
 
 </body>
