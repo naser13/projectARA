@@ -1,4 +1,17 @@
 class Values():
+    texts_fa = {
+        'name': 'نام',
+        'last_name': 'نام خانوادگی',
+        'national_ID': 'کد ملی',
+        'father_name': 'نام پدر',
+        'national_ID_error': 'کد ملی اشتباه است!',
+        'province': 'استان',
+        'city': 'شهرستان',
+        'address': 'آدرس دقیق',
+        'school_name': 'نام مدرسه',
+        'school_phone': 'شماره تلفن مدرسه',
+        'telephone_error': 'تلفن اشتباه است!',
+        }
     provinces = (
         ('AZS', 'آذربایجان شرقی'),
         ('AZG', 'آذربایجان غربی'),

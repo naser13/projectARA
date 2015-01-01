@@ -2,15 +2,14 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>مدیر جدید</title>
 </head>
 <body dir="rtl">
     <form action="" method="post">
         {% csrf_token %}
         {{ form1 }}
-        <p>school:</p>
+        <p>اطلاعات مدرسه:</p>
         {{ form2 }}
-        <p>address:</p>
         {{ form3 }}
         <button type="submit">submit</button>
     </form>
