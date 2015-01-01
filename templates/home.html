@@ -5,7 +5,16 @@
     <title>PROJECT ARA</title>
 </head>
 <body>
-    <a href="{% url 'new_teacher' %}">new teacher</a><br>
-    <a href="{% url 'new_headmaster' %}">new headmaster</a><br>
+    {% if user.is_authenticated %}
+        <p> hello {{ user.username }}</p>
+        <a href="{% url 'logout_page' %}">Logout</a><br>
+        <a href="{% url 'new_teacher' %}">new teacher</a><br>
+        <a href="{% url 'new_headmaster' %}">new headmaster</a><br>
+    {% else %}
+        <a href="{% url 'login_page' %}">Login</a>
+        <p>Have no account? Sign Up Free</p>
+        <a href="{% url 'user_sign_up'%}">Sign Up</a>
+    {% endif %}
+
 </body>
 </html>
