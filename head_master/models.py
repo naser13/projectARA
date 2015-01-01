@@ -1,6 +1,7 @@
 from django.db import models
 from school.models import School
 from ara_test.values import Values
+from django.contrib.auth.models import User
 
 
 class HeadMaster(models.Model):
@@ -9,6 +10,7 @@ class HeadMaster(models.Model):
     national_ID = models.CharField(Values.texts_fa.get('national_ID'), max_length=10, unique=True)
     father_name = models.CharField(Values.texts_fa.get('father_name'), max_length=80, blank=True)
     school = models.OneToOneField(School)
+    user = models.OneToOneField(User)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name

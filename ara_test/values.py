@@ -11,6 +11,10 @@ class Values():
         'school_name': 'نام مدرسه',
         'school_phone': 'شماره تلفن مدرسه',
         'telephone_error': 'تلفن اشتباه است!',
+        'username': 'نام کاربری',
+        'email': 'پست الکترونیکی',
+        'password1': 'رمز',
+        'password2': 'تکرار رمز',
         }
     provinces = (
         ('AZS', 'آذربایجان شرقی'),

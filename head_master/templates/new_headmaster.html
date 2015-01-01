@@ -7,6 +7,9 @@
 <body dir="rtl">
     <form action="" method="post">
         {% csrf_token %}
+        <p>اطلاعات کاربری:</p>
+        {{ form }}
+        <p>اطلاعات شخصی:</p>
         {{ form1 }}
         <p>اطلاعات مدرسه:</p>
         {{ form2 }}
