@@ -15,6 +15,9 @@ class Values():
         'email': 'پست الکترونیکی',
         'password1': 'رمز',
         'password2': 'تکرار رمز',
+        'academic_degree': 'مدرک تحصیلی',
+        'field_of_study': 'رشته تحصیلی',
+        'university_name': 'دانشگاه',
         }
     provinces = (
         ('AZS', 'آذربایجان شرقی'),
