@@ -10,7 +10,11 @@
             {{ user.username }}</p>
         <a href="{% url 'logout_page' %}">خروج</a><br>
     {% else %}
-        <a href="{% url 'login_page' %}">وارد شوید</a>
+        <form method="post" action="">
+        {% csrf_token %}
+        {{ login_form }}
+        <button type="submit">ورود</button>
+        </form>
         <p>یا ثبت نام کنید:</p>
         <a href="{% url 'new_teacher' %}">ثبت نام معلم</a><br>
         <a href="{% url 'new_headmaster' %}">ثبت نام مدیر</a><br>
