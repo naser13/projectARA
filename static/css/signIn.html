@@ -1,0 +1,64 @@
+<div id="SigninModal" class="modal fade" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+                <h4 class="modal-title">ورود</h4>
+            </div>
+            <form action="/accounts/login/" method="POST" onsubmit="return validateSignIn();">
+                <input type='hidden' name='csrfmiddlewaretoken' value='IKtN9vmJ7E4VUrLANCwRJBOlbU00JScv' />
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                        </div>
+                    <div class="col-md-6">
+                        <table align="center" border="0" cellpadding="10" class="modal-form" dir="rtl">
+                            <tr style="border: 4px solid transparent;" >
+    <td>
+    </td>
+    <td>
+        <a href="/login/facebook/" class="btn btn-facebook" style="width: 100%"><i
+                class="icon-facebook pull-right"></i>
+        &nbsp;
+            ورود با حساب facebook
+        </a>
+    </td>
+</tr>
+<tr style="border: 4px solid transparent;">
+    <td>
+    </td>
+    <td>
+        <a href="/login/google-oauth2/" class="btn btn-google" style="width: 100%"><i class="icon-googleplus pull-right"></i>
+&nbsp;
+            ورود با حساب google
+        </a>
+
+    </td>
+</tr>
+
+                            
+                            <tr><th><label for="id_username">نام کاربری یا ایمیل:</label></th><td><input class="form-control" id="id_username" name="username" type="text" /></td></tr>
+<tr><th><label for="id_password">گذرواژه:</label></th><td><input class="form-control" id="id_password" name="password" type="password" /></td></tr>
+                            <td>
+                            </td>
+                            <td>
+                                <a href="/forgot_password/">رمز عبور را فراموشیدم!</a>
+                            </td>
+                        </table>
+                    </div>
+                        <div class="col-md-3">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary pull-left">ورود</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">انصراف</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

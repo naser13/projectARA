@@ -1,0 +1,175 @@
+﻿*{  -webkit-transition: .7s ease-out;
+    -moz-transition: .7s ease-out;
+    -o-transition:  .7s ease-out;
+    transition: .7s ease-out;
+    list-style: none;
+}
+
+/*
+     Base features
+*/
+body {
+    font-family: 'B Mitra', sans-serif;
+    line-height: 1.8em;
+}
+
+.bigicon {font-size: 3em;}
+h2{font-size: 42px;}
+h3{font-size: 28px;}
+h4{font-size: 18px; line-height: 1.4em;}
+
+p{
+    letter-spacing: 1px;
+    color: #c3c3c3;
+    font-weight: lighter;
+}
+
+
+/*
+       deafult style and formatting
+*/
+ul{padding: 0;}
+a{color: #ea9312}
+a:hover{color: #c3c3c3; text-decoration: none;}
+
+/*
+
+     header AREA
+     
+*/
+#bg-header{
+    /* background of header */
+    color: #fff;
+    text-align: center;
+    background: url(../images/trianglify-background.svg);/* background image ( it is svg) */
+    max-height: 880px;
+    overflow: hidden;
+    background-repeat: no-repeat;   /*see it is better to change it or no*/
+    max-width: 1750px;
+    margin: 0 auto;
+
+}
+
+.headercontent{
+    padding-top: 75px;
+    width: 100%;
+}
+#space {
+  padding-top: 80px;  /*the space between the header and icons section :-) */
+    
+}
+.text {
+    color: #191919;
+}
+#icon-user{
+    
+    background-color: #800080;
+}
+/**for forms
+* @author: mahsa;
+*/
+
+/** Background when LOG **/
+.modal-bg{
+    display: none;
+    position:fixed;
+    left:0;right:0;
+    top:0;bottom:0;
+    z-index:100;
+    background-color:rgba(50,50,50,0.5);
+}
+
+/*css for log-in for*/
+
+form{
+    display:block;
+    margin:30px;
+}
+
+input:focus{
+    border:2px solid #5DC3A7;
+  outline:0;
+}
+#sign form span{
+    background-color: #363b41;
+border-radius: 3px 0px 0px 3px;
+color: #606468;
+display: block;
+float: left;
+height: 28px;
+text-align: center;
+width: 50px;
+margin-left: 11px;
+    }
+    #sign form input {
+    height: 45px;
+width: 180px;
+float: left;
+margin-bottom: 5px;
+border-radius: 0 3px 3px 0;
+border: none;
+}
+
+#sign-in-button{
+    float: right;
+padding: 8px 15px;
+margin-top: -20px;
+margin-right: 20px;
+background: #03A89E;
+border: none;
+color: #fff;
+border-bottom: 3px solid #40E0D0;
+border-radius: 3px;
+cursor: pointer;
+}
+.button:active{
+   margin: 53px 70px;
+}
+button:hover{
+    background-color: #40E0D0;
+}
+#forgot-link{
+    text-align:right;
+    font-size: 14px;
+    line-height: 45px;
+    color: #fff;
+    display: inline-block;
+    margin-left:70px;
+}
+#forgot-link:hover{
+    color: #40E0D0;
+}
+#sign{ 
+    position:absolute;
+    display: none;
+    background-color:rgb(16, 24, 31);
+    top: 185px; 
+    left:50%;
+    width:340px;
+    height:260px;
+    margin-top:-130px;
+    margin-left:-170px;
+    z-index:101;
+    border-radius:3px;
+    box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
+}
+#sign span{
+    display: block;
+    text-align:center;
+background: #363b41;
+padding: 10px;
+color: #fff;
+border-radius: 3px;
+}
+.close{
+    float: right;
+    color: #fff;
+    font-family: serif;
+    font-size: 15px;
+    cursor:pointer;
+}
+.close:hover{
+    color: #A71315;
+}
+/* end of log-in form*/
+
