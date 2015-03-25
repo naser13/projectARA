@@ -1,24 +1,129 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>آرا</title>
-</head>
-<body dir="rtl">
-    {% if user.is_authenticated %}
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   <!-- first it is for window size -->
+
+           <!--  SITE TITLE  -->
+
+  <title> آرا </title>       <!-- This is what you see on your browser tab-->
+
+           <!-- FAVICONS --> <!-- This is what you see next to your title -->
+
+    <link rel ="icon" href="../images/favicon.png">
+    <link rel="" sizes="144x144" href="" />     <!-- responsive (different sizes) -->
+    <link rel="" sizes="114x114" href="" />
+    <link rel="" sizes="72x72" href="" />
+    <link rel="" sizes="57x57" href="" />
+
+    <!--  STYLESHEETS -->
+    <link rel="stylesheet" href="http://ifont.ir/apicode/39">
+    <link rel="stylesheet" href="http://ifont.ir/apicode/21">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"> <!-- using bootstrap-->
+    <link rel="stylesheet" href="{% static 'style.css' %}">    <!-- main css except image slider-->
+    <link href= "{% static 'js-image-slider.css'%}" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body >
+
+       <header>
+
+            <div id="bg-header">           <!-- the svg background-->
+            <div class="container headercontent">
+                <div id="logo"><h2 >آرا</h2>     </div>
+                <h4 >آینده ی روشن ایران</h4>
+            </div>
+
+             <!-- slider start-->
+    <div id="sliderFrame">
+        <div id="slider">            <!--the images -->
+            <a href=""><img src="{% static  's-lab-supplies.jpg' %}" alt="" />  </a>
+            <a class="lazyImage" href="{% static 'image-slider-2.jpg' %}" title=""></a>
+            <a href=""><b data-src="{% static 'teacherSlider.jpg' %}"></b></a>
+            <a class="lazyImage" href="{% static 'studentSlider.gif' %}" title=""></a>
+            <a class="lazyImage" href="{% static 'image-slider-5.jpg' %}" title=""></a>
+             </div>
+
+        <!--thumbnails-->
+        <div id="thumbs">
+            <div class="thumb"><img src="{% static 's-lab-supplies.jpg' %}" /></div>
+            <div class="thumb"><img src="{% static 'thumb2.jpg' %}" /></div>
+            <div class="thumb"><img src="{% static 'teacherSlider.jpg' %}" /></div>
+            <div class="thumb"><img src="{% static 'studentSlider.gif' %}" /></div>
+            <div class="thumb"><img src="{% static 'thumb5.jpg' %}" /></div>
+                   </div>
+    </div>
+
+           </div><!--Slider END-->
+
+        <!-- NAVBAR START -->
+          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+               <div class="container">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right"><!-- NAVIGATION ITEMS STRAT-->
+                        <li><a href="#about"><span id="icon-user"></span>درباره ما</a></li>
+                        <li><a href="#services"><span class="btnicon icon-cup"></span>خدمات</a></li>
+                         <!-- inja bayad dorost she... -->
+                    {% if user.is_authenticated %}
         <p> سلام
             {{ user.username }}</p>
         <a href="{% url 'logout_page' %}">خروج</a><br>
-    {% else %}
+                         {% else %}
         <form method="post" action="">
         {% csrf_token %}
         {{ login_form }}
         <button type="submit">ورود</button>
         </form>
-        <p>یا ثبت نام کنید:</p>
-        <a href="{% url 'new_teacher' %}">ثبت نام معلم</a><br>
-        <a href="{% url 'new_headmaster' %}">ثبت نام مدیر</a><br>
-    {% endif %}
+                        {% endif %}
+                        <li><a href="#Sign in" id="sign-in"><span class="btnicon icon-bubble"></span>ورود</a></li>
+                        <li><a href=""><span class="btnicon icon-envelope-open"></span>تماس با ما</a></li>
+                    </ul>
 
-</body>
-</html>
+                </div>
+                </div>
+        </nav><!--navbar end-->
+     </header><!--header end-->
+      <div id="space"></div>
+         <!-- Icons START -->
+
+    <section id="icons">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-sm-4">        <!--use bootstrap-->
+            <p><img src="{% static 'student.gif' %}" alt="" /></p>
+            <h3>دانش آموز</h3>
+          <!--  <p class ="text"> you can't find a teacher which is great for you , you don't know who is the best , you need planning and here is what you're looking for :-) </p>-->
+            <p><a href="#" target="_blank" class="btn btn-primary">ثبت نام</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p><img src="{% static 'teacher.gif' %}" alt="" /></p>
+            <h3>معلم</h3>
+            <!--<p class ="text">you are looking for a job ,you want a student , you want to teach in your favorite school so here you can find all </p>-->
+            <p><a href="{% url 'new_teacher' %}" target="_blank" class="btn btn-primary">ثبت نام</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p><img src="{% static 'headmaster.gif' %}" alt="" /></p>
+            <h3>مدیر</h3>
+            <!--<p class ="text">you want the best teacher in your city to be in your school , you want to buy useful supplies for your school so see our services</p>-->
+            <p> <a href="{% url 'new_headmaster' %}"target="_blank" class="btn btn-primary">ثبت نام مدیر</a></p>
+          </div>  </div>
+      </div>
+    </section>
+    <!-- log in -->
+
+<!-- end of log-in -->
+
+<div id="space"></div>
+    <!-- Icons END -->
+       {% block extra_js%}
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
+    <script src="{% static 'js-image-slider.js' %}" type="text/javascript"></script>
+    <script src="{% static 'form.js' %}" type="text/javascript"></script>
+    {% endblock %}
+
+     </body>
+     </html>
+
+
