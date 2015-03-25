@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'school',
     'head_master',
     'address',
+    'django_forms_bootstrap'
 )
 
 MIDDLEWARE_CLASSES = (
