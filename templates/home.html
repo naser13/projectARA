@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load bootstrap_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +21,8 @@
     <!--  STYLESHEETS -->
     <link rel="stylesheet" href="http://ifont.ir/apicode/39">
     <link rel="stylesheet" href="http://ifont.ir/apicode/21">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"> <!-- using bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"><!-- using bootstrap-->
+      <link rel="stylesheet" href="http://jschr.github.io/bootstrap-modal/css/bootstrap-modal-bs3patch.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">    <!-- main css except image slider-->
     <link href= "{% static 'css/js-image-slider.css'%}" rel="stylesheet" type="text/css" />
 
@@ -66,18 +68,7 @@
                         <li><a href="#about"><span id="icon-user"></span>درباره ما</a></li>
                         <li><a href="#services"><span class="btnicon icon-cup"></span>خدمات</a></li>
                          <!-- inja bayad dorost she... -->
-                    {% if user.is_authenticated %}
-        <p> سلام
-            {{ user.username }}</p>
-        <a href="{% url 'logout_page' %}">خروج</a><br>
-                         {% else %}
-        <form method="post" action="">
-        {% csrf_token %}
-        {{ login_form }}
-        <button type="submit">ورود</button>
-        </form>
-                        {% endif %}
-                        <li><a href="#Sign in" id="sign-in"><span class="btnicon icon-bubble"></span>ورود</a></li>
+                        <li><a href="#Sign in" id="sign-in" data-toggle="modal"><span class="btnicon icon-bubble" ></span>ورود</a></li>
                         <li><a href=""><span class="btnicon icon-envelope-open"></span>تماس با ما</a></li>
                     </ul>
 
@@ -85,6 +76,36 @@
                 </div>
         </nav><!--navbar end-->
      </header><!--header end-->
+        <!-- Sign-In form -->
+       {% if user.is_authenticated %}
+        <p> سلام
+            {{ user.username }}</p>
+        <a href="{% url 'logout_page' %}">خروج</a><br>
+                    {% else %}
+                        <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+               <form method="post" action="">
+  {% csrf_token %}
+  {{ login_form|as_bootstrap_inline }}
+  <button type="submit">ورود</button>
+  </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+ {% endif %}
+
+
       <div id="space"></div>
          <!-- Icons START -->
 
@@ -107,7 +128,7 @@
             <p><img src="{% static 'images/headmaster.gif' %}" alt="" /></p>
             <h3>مدیر</h3>
             <!--<p class ="text">you want the best teacher in your city to be in your school , you want to buy useful supplies for your school so see our services</p>-->
-            <p> <a href="{% url 'new_headmaster' %}"target="_blank" class="btn btn-primary">ثبت نام مدیر</a></p>
+            <p> <a href="{% url 'new_headmaster' %}"target="_blank" class="btn btn-primary">ثبت نام</a></p>
           </div>  </div>
       </div>
     </section>
