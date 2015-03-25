@@ -13,10 +13,21 @@
            <!-- FAVICONS --> <!-- This is what you see next to your title -->
 
     <link rel ="icon" href="../images/favicon.png">
-    <link rel="" sizes="144x144" href="" />     <!-- responsive (different sizes) -->
-    <link rel="" sizes="114x114" href="" />
-    <link rel="" sizes="72x72" href="" />
-    <link rel="" sizes="57x57" href="" />
+
+      <!-- FOR SIGN-IN FORM -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+$(document).ready(function(){
+	$("#myModal").on('show.bs.modal', function(event){
+        var button = $(event.relatedTarget);  // Button that triggered the modal
+        var titleData = button.data('title'); // Extract value from data-* attributes
+        $(this).find('.modal-title').text(titleData + ' Form');
+    });
+});
+</script>
 
     <!--  STYLESHEETS -->
     <link rel="stylesheet" href="http://ifont.ir/apicode/39">
@@ -68,7 +79,7 @@
                         <li><a href="#about"><span id="icon-user"></span>درباره ما</a></li>
                         <li><a href="#services"><span class="btnicon icon-cup"></span>خدمات</a></li>
                          <!-- inja bayad dorost she... -->
-                        <li><a href="#Sign in" id="sign-in" data-toggle="modal"><span class="btnicon icon-bubble" ></span>ورود</a></li>
+                        <li><a href="#Sign in" data-toggle="modal" data-target="#myModal"><span class="btnicon icon-bubble" ></span>ورود</a></li>
                         <li><a href=""><span class="btnicon icon-envelope-open"></span>تماس با ما</a></li>
                     </ul>
 
@@ -82,27 +93,28 @@
             {{ user.username }}</p>
         <a href="{% url 'logout_page' %}">خروج</a><br>
                     {% else %}
-                        <div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Confirmation</h4>
-            </div>
-            <div class="modal-body">
-               <form method="post" action="">
+                        <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="">
   {% csrf_token %}
   {{ login_form|as_bootstrap_inline }}
-  <button type="submit">ورود</button>
   </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">انصراف</button>
+                    <button type="button" class="btn btn-primary">ورود</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
  {% endif %}
 
 
@@ -141,7 +153,6 @@
        {% block extra_js%}
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
     <script src="{% static 'js/js-image-slider.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/form.js' %}" type="text/javascript"></script>
     {% endblock %}
 
      </body>
