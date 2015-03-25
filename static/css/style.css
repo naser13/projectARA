@@ -77,18 +77,20 @@ h3{
 /**for forms
 * @author: mahsa;
 */
-
-/** Background when LOG **/
-.modal-bg{
-    display: none;
-    position:fixed;
-    left:0;right:0;
-    top:0;bottom:0;
-    z-index:100;
-    background-color:rgba(50,50,50,0.5);
+.form-control{
+	max-width: 200px;
+	margin-right: 5px;
+}
+label{
+	margin-right: 5px;
+}
+form{
+    max-width:500px;
+}
+#myModal,.modal-dialog,.modal-content,.modal-header,.modal-body,.modal-footer{
+      max-width:500px;
 }
 
-/*css for log-in for*/
 
 
 
