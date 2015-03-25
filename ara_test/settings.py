@@ -89,25 +89,10 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
-# static files
-STATIC_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(
-        BASE_DIR,
-        'static',
-    ),
-)
 
-####
-CSS_ROOT = os.path.join(
-    BASE_DIR,'static/', 'css')
-IMG_ROOT = os.path.join(
-    BASE_DIR,'static/', 'images')
-JS_ROOT = os.path.join(
-    BASE_DIR,'static/', 'js')
-####
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 LOGIN_URL = 'login_page'
 LOGOUT_URL = 'logout_page'
