@@ -1,20 +1,28 @@
+{% load bootstrap_tags %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>مدیر جدید</title>
+    <link rel="stylesheet" href="http://ifont.ir/apicode/39">
+    <link rel="stylesheet" href="http://ifont.ir/apicode/21">
+    <link rel="stylesheet" href="{% static 'css/manager_style.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 </head>
 <body dir="rtl">
     <form action="" method="post">
         {% csrf_token %}
-        <p>اطلاعات کاربری:</p>
-        {{ form }}
-        <p>اطلاعات شخصی:</p>
-        {{ form1 }}
-        <p>اطلاعات مدرسه:</p>
-        {{ form2 }}
-        {{ form3 }}
-        <button type="submit">submit</button>
+         <legend>اطلاعات کاربری</legend>
+        {{ form|as_bootstrap }}
+       <legend>اطلاعات شخصی</legend>
+        {{ form1|as_bootstrap }}
+        <legend>اطلاعات مدرسه</legend>
+        {{ form2 |as_bootstrap}}
+        {{ form3 |as_bootstrap}}
+        <div class="form-actions">
+      <button type="submit" class="btn btn-primary">ثبت نام</button>
+    </div>
     </form>
 </body>
 </html>
