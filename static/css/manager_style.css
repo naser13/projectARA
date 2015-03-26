@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'BTitrTGEBold';
+  src: url(../static/font/BTitrTGEBold.eot#?) format('eot'),  /* IE6â€“8 */
+       url(../static/font/BTitrTGEBold.woff) format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url(../static/font/BTitrTGEBold.ttf) format('truetype');  /* Saf3â€”5, Chrome4+, FF3.5, Opera 10+ */
+}
+        body{
+	font-family: 'B Mitra','B Nazanin', sans-serif;
+	font-size: medium;
+
+}
+legend{
+    font-family: 'BTitrTGEBold','B Mitra';
+	font-size: x-large;
+	font-weight: bold;
+	text-align: center;
+}
+.form-control{
+	max-width: 200px;
+	margin-right: 5px;
+}
+label{
+	margin-right: 5px;
+}

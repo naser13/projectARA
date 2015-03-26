@@ -2,158 +2,169 @@
 {% load bootstrap_tags %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">   <!-- first it is for window size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- first it is for window size -->
 
-           <!--  SITE TITLE  -->
+    <!--  SITE TITLE  -->
 
-  <title> آرا </title>       <!-- This is what you see on your browser tab-->
+    <title> آرا </title> <!-- This is what you see on your browser tab-->
 
-           <!-- FAVICONS --> <!-- This is what you see next to your title -->
+    <!-- FAVICONS --> <!-- This is what you see next to your title -->
 
-    <link rel ="icon" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
 
-      <!-- FOR SIGN-IN FORM -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-      <script type="text/javascript">
-$(document).ready(function(){
-	$("#myModal").on('show.bs.modal', function(event){
-        var button = $(event.relatedTarget);  // Button that triggered the modal
-        var titleData = button.data('title'); // Extract value from data-* attributes
-        $(this).find('.modal-title').text(titleData + ' Form');
-    });
-});
-</script>
+    <!-- FOR SIGN-IN FORM -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#myModal").on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);  // Button that triggered the modal
+                var titleData = button.data('title'); // Extract value from data-* attributes
+                $(this).find('.modal-title').text(titleData + ' Form');
+            });
+        });
+    </script>
 
     <!--  STYLESHEETS -->
     <link rel="stylesheet" href="http://ifont.ir/apicode/39">
     <link rel="stylesheet" href="http://ifont.ir/apicode/21">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"><!-- using bootstrap-->
-      <link rel="stylesheet" href="http://jschr.github.io/bootstrap-modal/css/bootstrap-modal-bs3patch.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">    <!-- main css except image slider-->
-    <link href= "{% static 'css/js-image-slider.css'%}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- using bootstrap-->
+    <link rel="stylesheet" href="http://jschr.github.io/bootstrap-modal/css/bootstrap-modal-bs3patch.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- main css except image slider-->
+    <link href="{% static 'css/js-image-slider.css' %}" rel="stylesheet" type="text/css"/>
 
-    </head>
+</head>
 
-    <body >
+<body>
 
-       <header>
+<header>
 
-            <div id="bg-header">           <!-- the svg background-->
-            <div class="container headercontent">
-                <div id="logo"><h2 >آرا</h2>     </div>
-                <h4 >آینده ی روشن ایران</h4>
+    <div id="bg-header">           <!-- the svg background-->
+        <div class="container headercontent">
+            <div id="logo"><h2>آرا</h2></div>
+            <h4>آینده ی روشن ایران</h4>
+        </div>
+
+        <!-- slider start-->
+        <div id="sliderFrame">
+            <div id="slider">            <!--the images -->
+                <a href=""><img src="{% static  'images/s-lab-supplies.jpg' %}" alt=""/> </a>
+                <a class="lazyImage" href="{% static 'images/image-slider-2.jpg' %}" title=""></a>
+                <a href=""><b data-src="{% static 'images/teacherSlider.jpg' %}"></b></a>
+                <a class="lazyImage" href="{% static 'images/studentSlider.gif' %}" title=""></a>
+                <a class="lazyImage" href="{% static 'images/image-slider-5.jpg' %}" title=""></a>
             </div>
 
-             <!-- slider start-->
-    <div id="sliderFrame">
-        <div id="slider">            <!--the images -->
-            <a href=""><img src="{% static  'images/s-lab-supplies.jpg' %}" alt="" />  </a>
-            <a class="lazyImage" href="{% static 'images/image-slider-2.jpg' %}" title=""></a>
-            <a href=""><b data-src="{% static 'images/teacherSlider.jpg' %}"></b></a>
-            <a class="lazyImage" href="{% static 'images/studentSlider.gif' %}" title=""></a>
-            <a class="lazyImage" href="{% static 'images/image-slider-5.jpg' %}" title=""></a>
-             </div>
+            <!--thumbnails-->
+            <div id="thumbs">
+                <div class="thumb"><img src="{% static 'images/s-lab-supplies.jpg' %}"/></div>
+                <div class="thumb"><img src="{% static 'images/thumb2.jpg' %}"/></div>
+                <div class="thumb"><img src="{% static 'images/teacherSlider.jpg' %}"/></div>
+                <div class="thumb"><img src="{% static 'images/studentSlider.gif' %}"/></div>
+                <div class="thumb"><img src="{% static 'images/thumb5.jpg' %}"/></div>
+            </div>
+        </div>
 
-        <!--thumbnails-->
-        <div id="thumbs">
-            <div class="thumb"><img src="{% static 'images/s-lab-supplies.jpg' %}" /></div>
-            <div class="thumb"><img src="{% static 'images/thumb2.jpg' %}" /></div>
-            <div class="thumb"><img src="{% static 'images/teacherSlider.jpg' %}" /></div>
-            <div class="thumb"><img src="{% static 'images/studentSlider.gif' %}" /></div>
-            <div class="thumb"><img src="{% static 'images/thumb5.jpg' %}" /></div>
-                   </div>
     </div>
+    <!--Slider END-->
 
-           </div><!--Slider END-->
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right"><!-- NAVIGATION ITEMS STRAT-->
+                    <li><a href="#about"><span id="icon-user"></span>درباره ما</a></li>
+                    <li><a href="#services"><span class="btnicon icon-cup"></span>خدمات</a></li>
+                    <!-- inja bayad dorost she... -->
+                    <li><a href="#Sign in" data-toggle="modal" data-target="#myModal"><span
+                            class="btnicon icon-bubble"></span>ورود</a></li>
+                    <li><a href=""><span class="btnicon icon-envelope-open"></span>تماس با ما</a></li>
+                </ul>
 
-        <!-- NAVBAR START -->
-          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-               <div class="container">
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right"><!-- NAVIGATION ITEMS STRAT-->
-                        <li><a href="#about"><span id="icon-user"></span>درباره ما</a></li>
-                        <li><a href="#services"><span class="btnicon icon-cup"></span>خدمات</a></li>
-                         <!-- inja bayad dorost she... -->
-                        <li><a href="#Sign in" data-toggle="modal" data-target="#myModal"><span class="btnicon icon-bubble" ></span>ورود</a></li>
-                        <li><a href=""><span class="btnicon icon-envelope-open"></span>تماس با ما</a></li>
-                    </ul>
-
-                </div>
-                </div>
-        </nav><!--navbar end-->
-     </header><!--header end-->
-        <!-- Sign-In form -->
-       {% if user.is_authenticated %}
-        <p> سلام
-            {{ user.username }}</p>
-        <a href="{% url 'logout_page' %}">خروج</a><br>
-                    {% else %}
-                        <!-- Modal HTML -->
+            </div>
+        </div>
+    </nav>
+    <!--navbar end-->
+</header>
+<!--header end-->
+<!-- Sign-In form -->
+{% if user.is_authenticated %}
+    <p> سلام
+        {{ user.username }}</p>
+    <a href="{% url 'logout_page' %}">خروج</a><br>
+{% else %}
+    <!-- Modal HTML -->
     <div id="myModal" class="modal fade">
 
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 style="align-content:center; ">ثبت نام</h4>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="">
-  {% csrf_token %}
-  {{ login_form|as_bootstrap}}
-  </form>
+        <form method="post" action="">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 style="align-content:center; ">ثبت نام</h4>
+            </div>
+            <div class="modal-body">
+                {% csrf_token %}
+                {{ login_form|as_bootstrap }}
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">انصراف</button>
-                    <button type="button" class="btn btn-primary">ورود</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">انصراف</button>
+                <button type="submit" class="btn btn-primary">ورود</button>
+            </div>
 
+        </form>
     </div>
- {% endif %}
+{% endif %}
 
 
-      <div id="space"></div>
-         <!-- Icons START -->
+<div id="space"></div>
+<!-- Icons START -->
 
-    <section id="icons">
-      <div class="container">
+<section id="icons">
+    <div class="container">
         <div class="row text-center">
-          <div class="col-sm-4">        <!--use bootstrap-->
-            <p><img src="{% static 'images/student.gif' %}" alt="" /></p>
-            <h3>دانش آموز</h3>
-          <!--  <p class ="text"> you can't find a teacher which is great for you , you don't know who is the best , you need planning and here is what you're looking for :-) </p>-->
-            <p><a href="#" target="_blank" class="btn btn-primary">ثبت نام</a></p>
-          </div>
-          <div class="col-sm-4">
-            <p><img src="{% static 'images/teacher.gif' %}" alt="" /></p>
-            <h3>معلم</h3>
-            <!--<p class ="text">you are looking for a job ,you want a student , you want to teach in your favorite school so here you can find all </p>-->
-            <p><a href="{% url 'new_teacher' %}" target="_blank" class="btn btn-primary">ثبت نام</a></p>
-          </div>
-          <div class="col-sm-4">
-            <p><img src="{% static 'images/headmaster.gif' %}" alt="" /></p>
-            <h3>مدیر</h3>
-            <!--<p class ="text">you want the best teacher in your city to be in your school , you want to buy useful supplies for your school so see our services</p>-->
-            <p> <a href="{% url 'new_headmaster' %}"target="_blank" class="btn btn-primary">ثبت نام</a></p>
-          </div>  </div>
-      </div>
-    </section>
-    <!-- log in -->
+            <div class="col-sm-4">        <!--use bootstrap-->
+                <p><img src="{% static 'images/student.gif' %}" alt=""/></p>
+
+                <h3>دانش آموز</h3>
+                <!--  <p class ="text"> you can't find a teacher which is great for you , you don't know who is the best , you need planning and here is what you're looking for :-) </p>-->
+                <p><a href="#" target="_blank" class="btn btn-primary">ثبت نام</a></p>
+            </div>
+            <div class="col-sm-4">
+                <p><img src="{% static 'images/teacher.gif' %}" alt=""/></p>
+
+                <h3>معلم</h3>
+                <!--<p class ="text">you are looking for a job ,you want a student , you want to teach in your favorite school so here you can find all </p>-->
+                <p><a href="{% url 'new_teacher' %}" target="_blank" class="btn btn-primary">ثبت نام</a></p>
+            </div>
+            <div class="col-sm-4">
+                <p><img src="{% static 'images/headmaster.gif' %}" alt=""/></p>
+
+                <h3>مدیر</h3>
+                <!--<p class ="text">you want the best teacher in your city to be in your school , you want to buy useful supplies for your school so see our services</p>-->
+                <p><a href="{% url 'new_headmaster' %}" target="_blank" class="btn btn-primary">ثبت نام</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- log in -->
 
 <!-- end of log-in -->
 
 <div id="space"></div>
-    <!-- Icons END -->
-       {% block extra_js%}
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
+<!-- Icons END -->
+{% block extra_js %}
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="{% static 'js/js-image-slider.js' %}" type="text/javascript"></script>
-    {% endblock %}
+{% endblock %}
 
-     </body>
-     </html>
+</body>
+</html>
 
 
